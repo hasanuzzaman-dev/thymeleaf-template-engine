@@ -39,6 +39,15 @@ public class MyController {
     public String conditionHandler(Model model){
         model.addAttribute("isActive", true);
         model.addAttribute("gender", "F");
+
+        List<Integer> integerList = new ArrayList<>();
+        integerList.add(233);
+        integerList.add(78);
+        integerList.add(965);
+        integerList.add(85);
+
+        model.addAttribute("integerList", integerList);
+
         return "condition";
     }
 }

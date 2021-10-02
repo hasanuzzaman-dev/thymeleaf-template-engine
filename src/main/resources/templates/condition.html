@@ -15,5 +15,13 @@
 <h1 th:if="${gender} =='M'">Male</h1>
 <h1 th:unless="${gender} =='M'">Female</h1>
 
+<!--Switch-->
+<div th:switch="${#lists.size(integerList)}">
+    <h1 th:case="'0'">List contain zero element</h1>
+    <h1 th:case="'1'">List contain one element</h1>
+    <h1 th:case="*">List contain more than one element</h1>
+</div>
+
+
 </body>
 </html>
