@@ -1,5 +1,6 @@
 package com.hasan.thymeleaftemplateengine.controller;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,15 +40,18 @@ public class MyController {
     public String conditionHandler(Model model){
         model.addAttribute("isActive", true);
         model.addAttribute("gender", "F");
-
         List<Integer> integerList = new ArrayList<>();
         integerList.add(233);
         integerList.add(78);
         integerList.add(965);
         integerList.add(85);
-
         model.addAttribute("integerList", integerList);
-
         return "condition";
+    }
+
+    //Handler for including fragments
+    @GetMapping("/service")
+    public String serviceHandler(Model model){
+        return "service";
     }
 }
