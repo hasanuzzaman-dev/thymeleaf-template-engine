@@ -1,26 +1,37 @@
 <!doctype html>
 <html lang="en" xmlns:th = "http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
     <title>Conditional statement for Thymeleaf</title>
 </head>
 <body>
-<!--Elvis-->
-<h1>User is <span th:style="${isActive} ? 'color:green': 'color:red'" th:text="${isActive} ? 'Active' : 'Not Active'"></span></h1>
+<div class="container my-4">
+    <!--Elvis-->
+    <h1>User is <span th:style="${isActive} ? 'color:green': 'color:red'" th:text="${isActive} ? 'Active' : 'Not Active'"></span></h1>
 
-<!--if Unless-->
-<h1 th:if="${gender} =='M'">Male</h1>
-<h1 th:unless="${gender} =='M'">Female</h1>
+    <!--if Unless-->
+    <h1 th:if="${gender} =='M'">Male</h1>
+    <h1 th:unless="${gender} =='M'">Female</h1>
+</div>
 
 <!--Switch-->
-<div th:switch="${#lists.size(integerList)}">
+<div class="container my-4" th:switch="${#lists.size(integerList)}">
     <h1 th:case="'0'">List contain zero element</h1>
     <h1 th:case="'1'">List contain one element</h1>
     <h1 th:case="*">List contain more than one element</h1>
 </div>
+
+<hr class="featurette-divider">
+<footer id="conditionHostTag" th:replace="footer::footer1(title,subtitle)"></footer>
 
 
 </body>

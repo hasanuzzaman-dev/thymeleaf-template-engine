@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -40,6 +41,8 @@ public class MyController {
     public String conditionHandler(Model model){
         model.addAttribute("isActive", true);
         model.addAttribute("gender", "F");
+        model.addAttribute("title", "This is Condition Page");
+        model.addAttribute("subtitle", LocalDateTime.now().toString());
         List<Integer> integerList = new ArrayList<>();
         integerList.add(233);
         integerList.add(78);
@@ -52,6 +55,10 @@ public class MyController {
     //Handler for including fragments
     @GetMapping("/service")
     public String serviceHandler(Model model){
+
+        // processing logic
+        model.addAttribute("title", "This is Service Page");
+        model.addAttribute("subtitle", LocalDateTime.now().toString());
         return "service";
     }
 }
